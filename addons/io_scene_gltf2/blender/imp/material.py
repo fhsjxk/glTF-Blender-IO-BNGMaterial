@@ -79,7 +79,7 @@ class BlenderMaterial():
             pymaterial.pbr_metallic_roughness.blender_mat = mat
         elif 'KHR_materials_pbrSpecularGlossiness' in exts:
             pbr_specular_glossiness(mh)
-         elif 'bngMaterial' in pymaterial.extras:
+        elif 'bngMaterial' in pymaterial.extras:
             bng_material(mh)
         else:
             pbr_metallic_roughness(mh)
