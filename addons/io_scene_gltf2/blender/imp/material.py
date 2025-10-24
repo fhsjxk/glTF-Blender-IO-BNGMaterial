@@ -19,6 +19,7 @@ from ..com.extras import set_extras
 from .pbrMetallicRoughness import MaterialHelper, pbr_metallic_roughness
 from .KHR_materials_pbrSpecularGlossiness import pbr_specular_glossiness
 from .KHR_materials_unlit import unlit
+from .bngMaterial import bng_material
 
 
 class BlenderMaterial():
@@ -78,6 +79,8 @@ class BlenderMaterial():
             pymaterial.pbr_metallic_roughness.blender_mat = mat
         elif 'KHR_materials_pbrSpecularGlossiness' in exts:
             pbr_specular_glossiness(mh)
+         elif 'bngMaterial' in pymaterial.extras:
+            bng_material(mh)
         else:
             pbr_metallic_roughness(mh)
             pymaterial.pbr_metallic_roughness.blender_nodetree = mat.node_tree  # Used in case of for KHR_animation_pointer
